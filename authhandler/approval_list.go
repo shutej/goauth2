@@ -3,7 +3,7 @@
 package authhandler
 
 import (
-	"github.com/yanatan16/goauth2"
+	"github.com/shutej/goauth2"
 	"net/http"
 )
 

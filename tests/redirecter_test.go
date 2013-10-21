@@ -2,9 +2,9 @@ package tests
 
 import (
 	"fmt"
-	"github.com/yanatan16/goauth2"
-	"github.com/yanatan16/goauth2/authcache"
-	"github.com/yanatan16/goauth2/authhandler"
+	"github.com/shutej/goauth2"
+	"github.com/shutej/goauth2/authcache"
+	"github.com/shutej/goauth2/authhandler"
 	"io/ioutil"
 	"log"
 	"net/http"

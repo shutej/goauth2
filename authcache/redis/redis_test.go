@@ -2,8 +2,8 @@ package redis
 
 import (
 	. "./../../tests"
-	"github.com/yanatan16/goauth2"
-	"github.com/yanatan16/goauth2/authhandler"
+	"github.com/shutej/goauth2"
+	"github.com/shutej/goauth2/authhandler"
 	"fmt"
 	"io/ioutil"
 	"log"
