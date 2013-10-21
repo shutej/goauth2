@@ -1,5 +1,7 @@
 package goauth2
 
+import "string"
+
 // Authorization Cache
 // This is an interface that registers and looks up authorization codes
 // and access tokens with corresponding information.
@@ -103,8 +105,14 @@ func (s *StoreImpl) CreateAccessToken(r *AccessTokenRequest) (token, token_type 
 // Validate an access token is valid
 // Return true if valid, false otherwise.
 // Note: Supports only bearer tokens
-func (s *StoreImpl) ValidateAccessToken(authorization_field string) (bool, error) {
-	token := authorization_field // TODO
+func (s *StoreImpl) ValidateAccessToken(authorizationField string) (bool, error) {
+	const prefix = "Bearer "
+	if !strings.HasPrefix(authorizationField, prefix) {
+		err := NewServerError(
+			ErrorCodeInvalidRequest, "Authorization requires \"Bearer \" prefix.", "")
+		return false, err
+	}
+	token := authorizationField[len(prefix):]
 
 	valid, err := s.Backend.LookupAccessToken(token)
 	if err != nil {
