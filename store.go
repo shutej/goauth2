@@ -1,6 +1,6 @@
 package goauth2
 
-import "string"
+import "strings"
 
 // Authorization Cache
 // This is an interface that registers and looks up authorization codes
